@@ -18,9 +18,10 @@ print(dists)
 # 计算物体最终到原点的距离
 finaldists = np.sqrt(position[0,-1]**2 + position[1,-1]**2)
 print("物体最终到原点的距离：", finaldists)
+# 为轨迹序列增加起始原点
+x = np.append(0, position[0])
+y = np.append(0, position[1])
 # 绘图展示游走轨迹
-x = position[0]
-y = position[1]
 plt.plot(x, y, c='g', marker='*')
 plt.scatter(0, 0, c='r', marker='o')
 plt.text(.1, -.1, 'origin')
